@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { QuestionComponent } from './pages/question/question.component';
 import { SelectNumberComponent } from './pages/select-number/select-number.component';
+import { CountdownComponent } from './pages/countdown/countdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     QuestionComponent,
-    SelectNumberComponent
+    SelectNumberComponent,
+    CountdownComponent
   ],
   imports: [
     BrowserModule,
