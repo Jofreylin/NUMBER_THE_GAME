@@ -1,8 +1,12 @@
 <div class="selection-container">
     <div class="header">
-        <h1>Es el segundo número primo mayor que 10 y menor que 20</h1>
+        <div class="inner-header">
+            <h1 class="question">Es el segundo número primo mayor que 10 y menor que 20</h1>
+        </div>
         <div class="progress-bar">
-            <div class="progress" [style.width.%]="75"></div>
+            <div class="progress" [style.width.%]="percentage">
+                <span class="time-counter">{{count}}s</span>
+            </div>
         </div>
     </div>
 
@@ -19,4 +23,9 @@
         <button class="number-button"> 21 </button>
     </div>
 
+  
+    <div class="footer">
+        <a class="close-btn" routerLink="/" > <i class="fa-solid fa-right-from-bracket"></i> SALIR</a>
+    </div>
+ 
 </div>

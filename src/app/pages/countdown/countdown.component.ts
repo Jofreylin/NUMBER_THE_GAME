@@ -1,22 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-countdown',
   templateUrl: './countdown.component.html',
   styleUrls: ['./countdown.component.css']
 })
-export class CountdownComponent implements OnInit {
+export class CountdownComponent implements OnInit, OnDestroy {
 
   counter: number = 5;
+  interval: any;
+
+  constructor(private router: Router){
+
+  }
 
   ngOnInit() {
-    // Inicializar la cuenta regresiva
-    const interval = setInterval(() => {
-      if (this.counter > 0) {
-        this.counter--;
-      } else {
-        clearInterval(interval);
+    this.doCount()
+  }
+
+  doCount(){
+    this.interval = setInterval(() => {
+      this.counter -= 1;
+
+      if(this.counter == 0){
+        clearInterval(this.interval);
+        this.router.navigate(['/select'])
       }
-    }, 1000); // Disminuye el contador cada 1 segundo
+    }, 1100);
+  }
+
+  ngOnDestroy(): void {
+    if(this.interval){
+      clearInterval(this.interval);
+    }
   }
 }

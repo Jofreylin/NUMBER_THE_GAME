@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { QuestionComponent } from './pages/question/question.component';
 import { SelectNumberComponent } from './pages/select-number/select-number.component';
 import { CountdownComponent } from './pages/countdown/countdown.component';
+import { TimeoutComponent } from './timeout/timeout.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CountdownComponent } from './pages/countdown/countdown.component';
     HomeComponent,
     QuestionComponent,
     SelectNumberComponent,
-    CountdownComponent
+    CountdownComponent,
+    TimeoutComponent
   ],
   imports: [
     BrowserModule,

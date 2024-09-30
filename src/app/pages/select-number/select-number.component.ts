@@ -1,54 +1,47 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-select-number',
   templateUrl: './select-number.component.html',
   styleUrl: './select-number.component.css'
 })
-export class SelectNumberComponent implements OnInit {
+export class SelectNumberComponent implements OnInit, OnDestroy {
+
   numbers: number[] = [];
   selectedNumber: number | null = null;
-  useConfirmButton: boolean = true; // Cambia a `false` si no quieres usar el botón de confirmación
+  percentage: number = 100;
+
+  readonly totalSeconds: number = 30;
+  count: number = this.totalSeconds;
+  interval: any;
+
+  constructor(private router: Router){
+    
+  }
 
   ngOnInit() {
-    this.generateNumbers();
+    this.doCount()
   }
 
-  generateNumbers() {
-    const correctNumber = 23; // Número correcto basado en la lógica de tu juego
-    this.numbers = this.generateDistractors(correctNumber);
-    this.numbers.push(correctNumber);
-    this.shuffleNumbers();
-  }
-
-  generateDistractors(correctNumber: number): number[] {
-    // Generar números distractores
-    const distractors: number[] = [];
-    while (distractors.length < 7) { // Ajusta la cantidad de distractores
-      const randomNum = Math.floor(Math.random() * 100) + 1;
-      if (randomNum !== correctNumber && !distractors.includes(randomNum)) {
-        distractors.push(randomNum);
+  doCount(){
+    this.count = this.totalSeconds;
+    this.interval = setInterval(() => {
+      this.count -= 1;
+      this.percentage = (this.count/this.totalSeconds)*100;
+      if(this.count == 0){
+        clearInterval(this.interval);
+        this.router.navigate(['/timeout'])
       }
-    }
-    return distractors;
+    }, 1000);
   }
 
-  shuffleNumbers() {
-    // Mezclar números en el array
-    this.numbers.sort(() => Math.random() - 0.5);
-  }
-
-  selectNumber(number: number) {
-    this.selectedNumber = number;
-    if (!this.useConfirmButton) {
-      this.confirmSelection();
+  ngOnDestroy(): void {
+    if(this.interval){
+      clearInterval(this.interval);
     }
   }
 
-  confirmSelection() {
-    if (this.selectedNumber !== null) {
-      // Lógica para validar la selección y navegar a la Pantalla de Resultado
-      console.log('Número seleccionado:', this.selectedNumber);
-    }
-  }
+  
+
 }
