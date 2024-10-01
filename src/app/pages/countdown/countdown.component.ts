@@ -25,7 +25,7 @@ export class CountdownComponent implements OnInit, OnDestroy {
 
       if(this.counter == 0){
         clearInterval(this.interval);
-        this.router.navigate(['/select'])
+        this.router.navigate(['/question'])
       }
     }, 1100);
   }
