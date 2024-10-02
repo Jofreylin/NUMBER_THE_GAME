@@ -7,7 +7,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { QuestionComponent } from './pages/question/question.component';
 import { SelectNumberComponent } from './pages/select-number/select-number.component';
 import { CountdownComponent } from './pages/countdown/countdown.component';
-import { TimeoutComponent } from './timeout/timeout.component';
+import { TimeoutComponent } from './pages/timeout/timeout.component';
+import { CorrectAnswerComponent } from './pages/correct-answer/correct-answer.component';
+import { WrongAnswerComponent } from './pages/wrong-answer/wrong-answer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { TimeoutComponent } from './timeout/timeout.component';
     QuestionComponent,
     SelectNumberComponent,
     CountdownComponent,
-    TimeoutComponent
+    TimeoutComponent,
+    CorrectAnswerComponent,
+    WrongAnswerComponent
   ],
   imports: [
     BrowserModule,

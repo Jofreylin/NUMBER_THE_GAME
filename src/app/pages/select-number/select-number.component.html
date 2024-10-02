@@ -1,11 +1,11 @@
 <div class="selection-container">
     <div class="header">
         <div class="inner-header">
-            <h1 class="question">Es el segundo número primo mayor que 10 y menor que 20</h1>
+            <h1 class="question">{{question}}</h1>
         </div>
         <div class="progress-bar">
             <div class="progress" [style.width.%]="percentage">
-                <span class="time-counter">{{count}}s</span>
+                <!-- <span class="time-counter">{{count}}s</span> -->
             </div>
         </div>
     </div>
@@ -13,14 +13,7 @@
     <h2 class="selection-title">Selecciona el Número Correcto</h2>
 
     <div class="number-grid">
-        <button class="number-button"> 11 </button>
-        <button class="number-button"> 10 </button>
-        <button class="number-button"> 27 </button>
-        <button class="number-button"> 13 </button>
-        <button class="number-button"> 19 </button>
-        <button class="number-button"> 12 </button>
-        <button class="number-button"> 20 </button>
-        <button class="number-button"> 21 </button>
+        <button class="number-button" *ngFor="let response of responses" (click)="clickResponse(response)"> {{response.value}} </button>
     </div>
 
   
