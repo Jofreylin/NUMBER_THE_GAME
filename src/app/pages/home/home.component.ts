@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   playBackgroundMusic(): void {
     this.audio.src = 'musica/soundtrack.mp3'; // Verifica que la ruta sea correcta
     this.audio.loop = true; // La música se repite
-    this.audio.volume = 0.2;
+    this.audio.volume = 0.5;
     this.audio.play().catch(error => {
       console.error('Error al reproducir la música:', error);
     });
