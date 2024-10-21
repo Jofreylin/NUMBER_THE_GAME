@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { QuestionPool} from '../../models/questions'
 
 @Component({
   selector: 'app-select-number',
@@ -16,41 +17,8 @@ export class SelectNumberComponent implements OnInit, OnDestroy {
   count: number = this.totalSeconds;
   interval: any;
 
-  question: string = '¿Cuánto es 5 + 3?';
-  responses: {value: number, isCorrect: boolean}[] = [
-    {
-      value: 11,
-      isCorrect: false
-    },
-    {
-      value: 10,
-      isCorrect: false
-    },
-    {
-      value: 27,
-      isCorrect: false
-    },
-    {
-      value: 13,
-      isCorrect: false
-    },
-    {
-      value: 19,
-      isCorrect: false
-    },
-    {
-      value: 12,
-      isCorrect: false
-    },
-    {
-      value: 20,
-      isCorrect: false
-    },
-    {
-      value: 8,
-      isCorrect: true
-    }
-  ];
+  question: string | null | undefined = '';
+  responses: {value: string, isCorrect: boolean}[] = [];
 
   private audio: HTMLAudioElement = new Audio();  // Inicializamos el objeto de Audio
   constructor(private router: Router){
@@ -58,6 +26,19 @@ export class SelectNumberComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    const id = localStorage.getItem('selectedQuestionId');
+
+    if(!id){
+      // Handle the case where ID is not found
+      console.error('No question ID found in local storage.');
+      return;
+    }
+
+    // Find the question in the QuestionPool
+    const question = QuestionPool.find(q => q.id === Number(id));
+    this.question = question?.question;
+    this.responses = question?.answers ?? [];
+
     this.doCount()
     this.playBackgroundMusic();  // Iniciar música
   }
@@ -84,7 +65,7 @@ export class SelectNumberComponent implements OnInit, OnDestroy {
     }, 1000);
   }
 
-  clickResponse(response: {value: number, isCorrect: boolean}): void{
+  clickResponse(response: {value: string, isCorrect: boolean}): void{
     if(response.isCorrect){
       this.router.navigate(['/correct-answer'])
     }else{

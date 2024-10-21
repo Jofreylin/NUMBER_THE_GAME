@@ -1,5 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { QuestionPool} from '../../models/questions'
 
 @Component({
   selector: 'app-question',
@@ -12,13 +13,22 @@ export class QuestionComponent implements OnDestroy {
   interval: any;
 
 
-  question: string = '¿Cuánto es 5 + 3?';
+  question: string = '';
 
   constructor(private router: Router) {
-    this.doCount();
+    this.selectRandomQuestion();
   }
 
+  selectRandomQuestion() {
+    const randomIndex = Math.floor(Math.random() * QuestionPool.length);
+    const randomQuestion = QuestionPool[randomIndex];
   
+    this.question = randomQuestion.question;
+    // guardar ID en local storage
+    localStorage.setItem('selectedQuestionId', randomQuestion.id.toString());
+  
+    this.doCount();
+  }
 
   // Método de la cuenta regresiva
   doCount(): void {
