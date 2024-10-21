@@ -53,7 +53,6 @@ export class SelectNumberComponent implements OnInit, OnDestroy {
   ];
 
   private audio: HTMLAudioElement = new Audio();  // Inicializamos el objeto de Audio
-
   constructor(private router: Router){
     
   }
