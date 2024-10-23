@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private audio: HTMLAudioElement = new Audio();  // Inicializamos el objeto de Audio
 
   ngOnInit() {
+    localStorage.setItem('selectedQuestions', JSON.stringify([]));
     this.playBackgroundMusic();  // Iniciar música
   }
 

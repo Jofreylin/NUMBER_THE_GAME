@@ -20,8 +20,26 @@ export class QuestionComponent implements OnDestroy {
   }
 
   selectRandomQuestion() {
-    const randomIndex = Math.floor(Math.random() * QuestionPool.length);
-    const randomQuestion = QuestionPool[randomIndex];
+
+    let selectedQuestions: number[] = JSON.parse(localStorage.getItem('selectedQuestions') || '[]');
+    const unpickedQuestions = QuestionPool.filter(q => !selectedQuestions.includes(q.id));
+
+    let randomQuestion;
+
+    // If there are unpicked questions, choose from them
+    if (unpickedQuestions.length > 0) {
+      const randomIndex = Math.floor(Math.random() * unpickedQuestions.length);
+      randomQuestion = unpickedQuestions[randomIndex];
+  } else {
+      // If all questions have been picked, reset the selection and allow picking repeated questions
+      selectedQuestions = [];
+      const randomIndex = Math.floor(Math.random() * QuestionPool.length);
+      randomQuestion = QuestionPool[randomIndex];
+  }
+
+    // Store the selected question's ID in localStorage
+    selectedQuestions.push(randomQuestion.id);
+    localStorage.setItem('selectedQuestions', JSON.stringify(selectedQuestions));
   
     this.question = randomQuestion.question;
     // guardar ID en local storage
