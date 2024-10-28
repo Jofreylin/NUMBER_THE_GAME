@@ -13,7 +13,7 @@ export class SelectNumberComponent implements OnInit, OnDestroy {
   selectedNumber: number | null = null;
   percentage: number = 100;
 
-  readonly totalSeconds: number = 30;
+  totalSeconds: number = 15;
   count: number = this.totalSeconds;
   interval: any;
 
@@ -38,6 +38,7 @@ export class SelectNumberComponent implements OnInit, OnDestroy {
     const question = QuestionPool.find(q => q.id === Number(id));
     this.question = question?.question;
     this.responses = question?.answers ?? [];
+    this.totalSeconds = question?.time ?? 15;
 
     this.doCount()
     this.playBackgroundMusic();  // Iniciar música

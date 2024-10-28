@@ -3,6 +3,8 @@ export const QuestionPool:
         id: number,
         question: string,
         hint: string,
+        difficulty?: string,
+        time?: number,
         answers: {
             value: string,
             isCorrect: boolean
@@ -13,6 +15,8 @@ export const QuestionPool:
         "id": 1,
         "question": "¿Cuánto es 5 + 3?",
         "hint": "Suma simple.",
+        "difficulty": "Fácil",
+        "time": 10,
         "answers": [
             { "value": "8", "isCorrect": true },
             { "value": "7", "isCorrect": false },
@@ -28,6 +32,8 @@ export const QuestionPool:
         "id": 2,
         "question": "¿Cuánto es 10 - 4?",
         "hint": "Resta de dos dígitos.",
+        "difficulty": "Fácil",
+        "time": 12,
         "answers": [
             { "value": "6", "isCorrect": true },
             { "value": "5", "isCorrect": false },
@@ -43,6 +49,8 @@ export const QuestionPool:
         "id": 3,
         "question": "¿Cuál es el número mayor: 7 o 9?",
         "hint": "Comparación de números.",
+        "difficulty": "Fácil",
+        "time": 9,
         "answers": [
             { "value": "9", "isCorrect": true },
             { "value": "7", "isCorrect": false },
@@ -58,6 +66,8 @@ export const QuestionPool:
         "id": 4,
         "question": "¿Cuánto es 3 × 2?",
         "hint": "Multiplicación sencilla.",
+        "difficulty": "Fácil",
+        "time": 11,
         "answers": [
             { "value": "6", "isCorrect": true },
             { "value": "5", "isCorrect": false },
@@ -73,6 +83,8 @@ export const QuestionPool:
         "id": 5,
         "question": "¿Qué número viene después del 12?",
         "hint": "Sigue la secuencia numérica.",
+        "difficulty": "Fácil",
+        "time": 8,
         "answers": [
             { "value": "13", "isCorrect": true },
             { "value": "14", "isCorrect": false },
@@ -88,6 +100,8 @@ export const QuestionPool:
         "id": 6,
         "question": "¿Cuánto es la mitad de 8?",
         "hint": "Divide por dos.",
+        "difficulty": "Fácil",
+        "time": 9,
         "answers": [
             { "value": "4", "isCorrect": true },
             { "value": "3", "isCorrect": false },
@@ -103,6 +117,8 @@ export const QuestionPool:
         "id": 7,
         "question": "Si tienes 4 manzanas y comes 2, ¿cuántas te quedan?",
         "hint": "Resta las manzanas que comiste.",
+        "difficulty": "Fácil",
+        "time": 10,
         "answers": [
             { "value": "2", "isCorrect": true },
             { "value": "3", "isCorrect": false },
@@ -118,6 +134,8 @@ export const QuestionPool:
         "id": 8,
         "question": "¿Cuántos lados tiene un triángulo?",
         "hint": "Piensa en la geometría básica.",
+        "difficulty": "Fácil",
+        "time": 8,
         "answers": [
             { "value": "3", "isCorrect": true },
             { "value": "4", "isCorrect": false },
@@ -133,6 +151,8 @@ export const QuestionPool:
         "id": 9,
         "question": "Si tienes 2 caramelos y te dan 3 más, ¿cuántos tienes en total?",
         "hint": "Suma los caramelos.",
+        "difficulty": "Fácil",
+        "time": 10,
         "answers": [
             { "value": "5", "isCorrect": true },
             { "value": "4", "isCorrect": false },
@@ -148,6 +168,8 @@ export const QuestionPool:
         "id": 10,
         "question": "¿Cuánto es 9 ÷ 3?",
         "hint": "Divide entre tres.",
+        "difficulty": "Fácil",
+        "time": 11,
         "answers": [
             { "value": "3", "isCorrect": true },
             { "value": "2", "isCorrect": false },
@@ -163,6 +185,8 @@ export const QuestionPool:
         "id": 11,
         "question": "Si un tren tiene 4 vagones y se le agregan 2 más, ¿cuántos vagones tiene en total?",
         "hint": "Suma los vagones.",
+        "difficulty": "Fácil",
+        "time": 12,
         "answers": [
             { "value": "6", "isCorrect": true },
             { "value": "5", "isCorrect": false },
@@ -178,6 +202,8 @@ export const QuestionPool:
         "id": 12,
         "question": "¿Cuál es el siguiente número en la secuencia: 2, 4, 6, ___?",
         "hint": "Observa el patrón.",
+        "difficulty": "Fácil",
+        "time": 13,
         "answers": [
             { "value": "8", "isCorrect": true },
             { "value": "7", "isCorrect": false },
@@ -193,6 +219,8 @@ export const QuestionPool:
         "id": 13,
         "question": "Si un gato tiene 4 patas, ¿cuántas patas tienen 3 gatos?",
         "hint": "Multiplica la cantidad de patas por la cantidad de gatos.",
+        "difficulty": "Fácil",
+        "time": 12,
         "answers": [
             { "value": "12", "isCorrect": true },
             { "value": "10", "isCorrect": false },
@@ -208,6 +236,8 @@ export const QuestionPool:
         "id": 14,
         "question": "Si hoy es lunes, ¿qué día será en dos días?",
         "hint": "Cuenta los días a partir de lunes.",
+        "difficulty": "Fácil",
+        "time": 10,
         "answers": [
             { "value": "Miércoles", "isCorrect": true },
             { "value": "Martes", "isCorrect": false },
@@ -223,6 +253,8 @@ export const QuestionPool:
         "id": 15,
         "question": "Si un cuadrado tiene 4 lados, ¿cuántos lados tienen 2 cuadrados juntos?",
         "hint": "Suma los lados de ambos cuadrados.",
+        "difficulty": "Fácil",
+        "time": 11,
         "answers": [
             { "value": "8", "isCorrect": true },
             { "value": "6", "isCorrect": false },
@@ -238,6 +270,8 @@ export const QuestionPool:
         "id": 16,
         "question": "Si una semana tiene 7 días, ¿cuántos días hay en 2 semanas?",
         "hint": "Multiplica la cantidad de días por el número de semanas.",
+        "difficulty": "Fácil",
+        "time": 12,
         "answers": [
             { "value": "14", "isCorrect": true },
             { "value": "12", "isCorrect": false },
@@ -253,6 +287,8 @@ export const QuestionPool:
         "id": 17,
         "question": "¿Cuál es el número faltante en la secuencia: 1, 3, 5, ___?",
         "hint": "Observa cómo aumentan los números.",
+        "difficulty": "Fácil",
+        "time": 13,
         "answers": [
             { "value": "7", "isCorrect": true },
             { "value": "6", "isCorrect": false },
@@ -268,6 +304,8 @@ export const QuestionPool:
         "id": 18,
         "question": "Si tienes 10 caramelos y regalas 3, ¿cuántos te quedan?",
         "hint": "Resta los caramelos que regalaste.",
+        "difficulty": "Fácil",
+        "time": 10,
         "answers": [
             { "value": "7", "isCorrect": true },
             { "value": "6", "isCorrect": false },
@@ -283,6 +321,8 @@ export const QuestionPool:
         "id": 19,
         "question": "Si una bicicleta tiene 2 ruedas, ¿cuántas ruedas tienen 4 bicicletas?",
         "hint": "Multiplica el número de ruedas por la cantidad de bicicletas.",
+        "difficulty": "Fácil",
+        "time": 12,
         "answers": [
             { "value": "8", "isCorrect": true },
             { "value": "6", "isCorrect": false },
@@ -298,6 +338,8 @@ export const QuestionPool:
         "id": 20,
         "question": "Si un reloj marca las 3 y avanza 2 horas, ¿qué hora será?",
         "hint": "Suma las horas al reloj.",
+        "difficulty": "Fácil",
+        "time": 11,
         "answers": [
             { "value": "5", "isCorrect": true },
             { "value": "4", "isCorrect": false },
@@ -313,6 +355,8 @@ export const QuestionPool:
         "id": 21,
         "question": "Si un año tiene 12 meses, ¿cuántos meses tienen 3 años?",
         "hint": "Multiplica los meses por la cantidad de años.",
+        "difficulty": "Fácil",
+        "time": 13,
         "answers": [
             { "value": "36", "isCorrect": true },
             { "value": "24", "isCorrect": false },
@@ -328,6 +372,8 @@ export const QuestionPool:
         "id": 22,
         "question": "Si tienes 5 bolas y compras 5 más, ¿cuántas bolas tienes en total?",
         "hint": "Suma las bolas que tenías con las que compraste.",
+        "difficulty": "Fácil",
+        "time": 10,
         "answers": [
             { "value": "10", "isCorrect": true },
             { "value": "9", "isCorrect": false },
@@ -343,6 +389,8 @@ export const QuestionPool:
         "id": 23,
         "question": "¿Cuántos minutos hay en media hora?",
         "hint": "Piensa en cuántos minutos tiene una hora y divide por dos.",
+        "difficulty": "Fácil",
+        "time": 9,
         "answers": [
             { "value": "30", "isCorrect": true },
             { "value": "20", "isCorrect": false },
@@ -358,6 +406,8 @@ export const QuestionPool:
         "id": 24,
         "question": "Si una docena son 12, ¿cuántos huevos hay en media docena?",
         "hint": "Divide la docena por dos.",
+        "difficulty": "Fácil",
+        "time": 8,
         "answers": [
             { "value": "6", "isCorrect": true },
             { "value": "5", "isCorrect": false },
@@ -373,6 +423,8 @@ export const QuestionPool:
         "id": 25,
         "question": "Si una jirafa tiene 4 patas, ¿cuántas patas tienen 5 jirafas?",
         "hint": "Multiplica las patas por el número de jirafas.",
+        "difficulty": "Fácil",
+        "time": 13,
         "answers": [
             { "value": "20", "isCorrect": true },
             { "value": "15", "isCorrect": false },
@@ -388,6 +440,8 @@ export const QuestionPool:
         "id": 26,
         "question": "Si un avión recorre 500 km en una hora, ¿cuántos kilómetros recorrerá en 3 horas?",
         "hint": "Multiplica la distancia por el tiempo.",
+        "difficulty": "Intermedio",
+        "time": 20,
         "answers": [
             { "value": "1500", "isCorrect": true },
             { "value": "1200", "isCorrect": false },
@@ -403,6 +457,8 @@ export const QuestionPool:
         "id": 27,
         "question": "Un autobús tiene 20 pasajeros y se bajan 8, luego suben 5 más. ¿Cuántos pasajeros hay ahora?",
         "hint": "Resta los pasajeros que se bajan y luego suma los que suben.",
+        "difficulty": "Intermedio",
+        "time": 22,
         "answers": [
             { "value": "17", "isCorrect": true },
             { "value": "15", "isCorrect": false },
@@ -418,6 +474,8 @@ export const QuestionPool:
         "id": 28,
         "question": "Si hoy es miércoles y faltan 5 días para una fiesta, ¿qué día será la fiesta?",
         "hint": "Cuenta los días a partir de miércoles.",
+        "difficulty": "Intermedio",
+        "time": 18,
         "answers": [
             { "value": "Lunes", "isCorrect": true },
             { "value": "Domingo", "isCorrect": false },
@@ -433,6 +491,8 @@ export const QuestionPool:
         "id": 29,
         "question": "En una carrera de 4 vueltas, si ya has corrido 3 vueltas, ¿cuántas te faltan?",
         "hint": "Resta las vueltas que ya corriste del total.",
+        "difficulty": "Intermedio",
+        "time": 16,
         "answers": [
             { "value": "1", "isCorrect": true },
             { "value": "2", "isCorrect": false },
@@ -448,6 +508,8 @@ export const QuestionPool:
         "id": 30,
         "question": "Si un coche consume 10 litros de gasolina por cada 100 km, ¿cuántos litros necesitará para recorrer 300 km?",
         "hint": "Multiplica el consumo por la distancia recorrida.",
+        "difficulty": "Intermedio",
+        "time": 24,
         "answers": [
             { "value": "30", "isCorrect": true },
             { "value": "25", "isCorrect": false },
@@ -463,6 +525,8 @@ export const QuestionPool:
         "id": 31,
         "question": "Si una pizza se corta en 8 porciones y ya se han comido 5, ¿cuántas porciones quedan?",
         "hint": "Resta las porciones que se comieron.",
+        "difficulty": "Intermedio",
+        "time": 17,
         "answers": [
             { "value": "3", "isCorrect": true },
             { "value": "4", "isCorrect": false },
@@ -478,6 +542,8 @@ export const QuestionPool:
         "id": 32,
         "question": "Si en una caja hay 24 chocolates y quieres repartirlos equitativamente entre 6 personas, ¿cuántos chocolates recibe cada persona?",
         "hint": "Divide los chocolates por la cantidad de personas.",
+        "difficulty": "Intermedio",
+        "time": 19,
         "answers": [
             { "value": "4", "isCorrect": false },
             { "value": "6", "isCorrect": true },
@@ -493,6 +559,8 @@ export const QuestionPool:
         "id": 33,
         "question": "Si tienes 7 camisetas y cada una cuesta $15, ¿cuánto costarían todas juntas?",
         "hint": "Multiplica la cantidad de camisetas por el precio de cada una.",
+        "difficulty": "Intermedio",
+        "time": 21,
         "answers": [
             { "value": "105", "isCorrect": true },
             { "value": "110", "isCorrect": false },
@@ -508,6 +576,8 @@ export const QuestionPool:
         "id": 34,
         "question": "Un árbol tiene 12 ramas y cada rama tiene 3 nidos, ¿cuántos nidos hay en total?",
         "hint": "Multiplica las ramas por la cantidad de nidos.",
+        "difficulty": "Intermedio",
+        "time": 23,
         "answers": [
             { "value": "36", "isCorrect": true },
             { "value": "33", "isCorrect": false },
@@ -523,6 +593,8 @@ export const QuestionPool:
         "id": 35,
         "question": "Si un grupo de 5 amigos comparte una cuenta de $100 equitativamente, ¿cuánto paga cada uno?",
         "hint": "Divide la cuenta por la cantidad de amigos.",
+        "difficulty": "Intermedio",
+        "time": 18,
         "answers": [
             { "value": "20", "isCorrect": true },
             { "value": "25", "isCorrect": false },
@@ -538,6 +610,8 @@ export const QuestionPool:
         "id": 36,
         "question": "Si un reloj marca las 10:15 y pasan 45 minutos, ¿qué hora será?",
         "hint": "Suma los minutos al tiempo actual.",
+        "difficulty": "Intermedio",
+        "time": 20,
         "answers": [
             { "value": "11:00", "isCorrect": true },
             { "value": "10:30", "isCorrect": false },
@@ -553,6 +627,8 @@ export const QuestionPool:
         "id": 37,
         "question": "Si una pelota de baloncesto pesa 600 gramos, ¿cuánto pesarán 10 pelotas iguales?",
         "hint": "Multiplica el peso de una por la cantidad.",
+        "difficulty": "Intermedio",
+        "time": 22,
         "answers": [
             { "value": "6000", "isCorrect": true },
             { "value": "6500", "isCorrect": false },
@@ -568,6 +644,8 @@ export const QuestionPool:
         "id": 38,
         "question": "En una carrera de relevos, cada vuelta son 400 metros y el equipo debe correr 4 vueltas, ¿cuál es la distancia total?",
         "hint": "Multiplica la distancia de una vuelta por el número de vueltas.",
+        "difficulty": "Intermedio",
+        "time": 24,
         "answers": [
             { "value": "1600", "isCorrect": true },
             { "value": "1400", "isCorrect": false },
@@ -583,6 +661,8 @@ export const QuestionPool:
         "id": 39,
         "question": "Si un libro tiene 300 páginas y lees 50 páginas al día, ¿cuántos días tardarás en leerlo?",
         "hint": "Divide el total de páginas por la cantidad leída por día.",
+        "difficulty": "Intermedio",
+        "time": 19,
         "answers": [
             { "value": "6", "isCorrect": true },
             { "value": "5", "isCorrect": false },
@@ -598,6 +678,8 @@ export const QuestionPool:
         "id": 40,
         "question": "Si un rectángulo tiene un área de 40 cm² y una base de 8 cm, ¿cuál es la altura?",
         "hint": "Divide el área por la base.",
+        "difficulty": "Intermedio",
+        "time": 21,
         "answers": [
             { "value": "5", "isCorrect": true },
             { "value": "4", "isCorrect": false },
