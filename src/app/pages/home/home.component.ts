@@ -3,32 +3,37 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-
-  private audio: HTMLAudioElement = new Audio();  // Inicializamos el objeto de Audio
+  private audio: HTMLAudioElement = new Audio();
 
   ngOnInit() {
     localStorage.setItem('selectedQuestions', JSON.stringify([]));
-    this.playBackgroundMusic();  // Iniciar música
+    this.playBackgroundMusic();
   }
 
-
   playBackgroundMusic(): void {
-    this.audio.src = 'musica/soundtrack.mp3'; // Verifica que la ruta sea correcta
-    this.audio.loop = true; // La música se repite
-    this.audio.volume = 0.5;
+    this.audio.src = 'musica/soundtrack.mp3';
+    this.audio.loop = true;
+    this.audio.volume = 0.4;
     this.audio.play().catch(error => {
       console.error('Error al reproducir la música:', error);
     });
   }
 
-  ngOnDestroy(): void {
-    // Detener la música al salir del componente
+  stopMusic(): void {
     if (this.audio) {
       this.audio.pause();
       this.audio.currentTime = 0;
     }
+  }
+
+  adjustVolume(level: number): void {
+    this.audio.volume = level;
+  }
+
+  ngOnDestroy(): void {
+    this.stopMusic();
   }
 }
