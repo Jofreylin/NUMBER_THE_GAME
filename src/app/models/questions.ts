@@ -476,7 +476,7 @@ export const QuestionPool:
     },
     {
         "id": 32,
-        "question": "Si en una caja hay 24 chocolates y quieres repartirlos equitativamente entre 6 personas, ¿cuántos chocolates recibe cada persona?",
+        "question": "Si en una caja hay 24 chocolates y quieres repartirlos equitativamente entre 4 personas, ¿cuántos chocolates recibe cada persona?",
         "hint": "Divide los chocolates por la cantidad de personas.",
         "answers": [
             { "value": "4", "isCorrect": false },
