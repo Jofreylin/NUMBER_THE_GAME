@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { QuestionPool} from '../../models/questions'
+import { LettersPool, QuestionPool} from '../../models/questions'
 
 @Component({
   selector: 'app-select-number',
@@ -19,6 +19,7 @@ export class SelectNumberComponent implements OnInit, OnDestroy {
 
   question: string | null | undefined = '';
   responses: {value: string, isCorrect: boolean}[] = [];
+  letters = LettersPool;
 
   private audio: HTMLAudioElement = new Audio();  // Inicializamos el objeto de Audio
   constructor(private router: Router){

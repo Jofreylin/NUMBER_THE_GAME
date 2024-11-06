@@ -1,3 +1,42 @@
+export const LettersPool: {letter:string}[] = [
+    {
+        letter: 'A'
+    },
+    {
+        letter: 'B'
+    },
+    {
+        letter: 'C'
+    },
+    {
+        letter: 'D'
+    },
+    {
+        letter: 'E'
+    },
+    {
+        letter: 'F'
+    },
+    {
+        letter: 'G'
+    },
+    {
+        letter: 'H'
+    },
+    {
+        letter: 'I'
+    },
+    {
+        letter: 'J'
+    },
+    {
+        letter: 'K'
+    },
+    {
+        letter: 'L'
+    }
+]
+
 export const QuestionPool:
     {
         id: number,

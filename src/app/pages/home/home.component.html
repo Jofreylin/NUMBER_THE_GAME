@@ -1,12 +1,26 @@
-<div class="game-container"> 
-    <h1 class="game-title">¡Bienvenido a Adivina el Número!</h1>
-    <p class="game-subtitle">¿Estás listo para el desafío?</p>
-    <div class="image-container">
-        <img src="images/logo.webp" alt="Número" class="game-image" loading="lazy">
+<div class="container">
+    <div class="content">
+        <!-- Game Title -->
+        <div class="title-bubble">
+            <h1 class="title-text">
+                <span class="title-large">¿ESTÁS LISTO </span><br />
+                <span class="title-largest">PARA EL DESAFÍO?</span><br />
+                <span class="title-small">QUIZ GAME</span>
+            </h1>
+        </div>
+
+        <!-- Start Game Button -->
+        <button class="start-button" routerLink="/countdown"><i class="fa-solid fa-hand-sparkles"></i> Iniciar </button>
+
+        <!-- Instructions Block -->
+        <div class="instructions-block">
+            <h2 class="instructions-title">Cómo Jugar:</h2>
+            <ol class="instructions-list">
+                <li>Lee la pregunta cuidadosamente.</li>
+                <li>Escoge la respuesta correcta de las opciones dadas.</li>
+                <li>Haz click en la respuesta.</li>
+                <li>¡Intenta responder todas las preguntas que puedas!</li>
+            </ol>
+        </div>
     </div>
-    <button class="start-button" routerLink="/countdown">Iniciar Juego</button>
-    <p class="instructions">
-        Intenta resolver y responder las preguntas en el menor tiempo posible.
-        ¡Cada intento cuenta, buena suerte!
-    </p>
 </div>
