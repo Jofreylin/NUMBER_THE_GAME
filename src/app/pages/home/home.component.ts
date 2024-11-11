@@ -34,6 +34,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     localStorage.setItem('selectedQuestions', JSON.stringify([]));
+    localStorage.setItem('itStarted','false');
+    localStorage.setItem('rightAnswers', '0')
+    localStorage.setItem('wrongAnswers', '0')
     this.playBackgroundMusic();
   }
 

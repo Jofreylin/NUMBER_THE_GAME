@@ -44,3 +44,13 @@
     background-color: #f3f3f3;
     color: #000000;
 }
+
+.again-btn{
+    background-color: #b30000;
+    margin-left: 1rem;
+}
+
+.again-btn:hover{
+    background-color: #000000;
+    color: #ffffff;
+}

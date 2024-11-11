@@ -45,7 +45,6 @@ export class SelectNumberComponent implements OnInit, OnDestroy {
     this.playBackgroundMusic();  // Iniciar música
   }
 
-
   playBackgroundMusic(): void {
     this.audio.src = 'musica/Ambiente.ogg'; // Verifica que la ruta sea correcta
     this.audio.loop = true; // La música se repite
@@ -62,6 +61,8 @@ export class SelectNumberComponent implements OnInit, OnDestroy {
       this.percentage = (this.count/this.totalSeconds)*100;
       if(this.count == 0){
         clearInterval(this.interval);
+        const wrongAnswers = Number(localStorage.getItem('wrongAnswers') ?? 0) + 1;
+        localStorage.setItem('wrongAnswers', wrongAnswers.toString())
         this.router.navigate(['/timeout'])
       }
     }, 1000);
@@ -69,8 +70,12 @@ export class SelectNumberComponent implements OnInit, OnDestroy {
 
   clickResponse(response: {value: string, isCorrect: boolean}): void{
     if(response.isCorrect){
+      const rightAnswers = Number(localStorage.getItem('rightAnswers') ?? 0) + 1;
+      localStorage.setItem('rightAnswers', rightAnswers.toString())
       this.router.navigate(['/correct-answer'])
     }else{
+      const wrongAnswers = Number(localStorage.getItem('wrongAnswers') ?? 0) + 1;
+      localStorage.setItem('wrongAnswers', wrongAnswers.toString())
       this.router.navigate(['/wrong-answer'])
     }
   }

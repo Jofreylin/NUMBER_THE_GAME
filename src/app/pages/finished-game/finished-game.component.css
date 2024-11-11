@@ -7,14 +7,20 @@
     flex-direction: column;
 }
 
-.sad-face {
+.happy-face {
     font-size: 8rem;
-    color: #ad310c;
+    color: #0c95ad;
 }
 
 .title{
     margin-top: 20px;
     margin-bottom: 30px;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .block {
@@ -24,6 +30,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     width: 30rem;
     text-align: center;
+    margin-inline: 10px;
 }
 
 .btn {
@@ -46,7 +53,7 @@
 }
 
 .again-btn{
-    background-color: #b30000;
+    background-color: #0056b3;
     margin-left: 1rem;
 }
 

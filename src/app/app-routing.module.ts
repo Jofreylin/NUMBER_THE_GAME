@@ -7,6 +7,7 @@ import { CountdownComponent } from './pages/countdown/countdown.component';
 import { TimeoutComponent } from './pages/timeout/timeout.component';
 import { CorrectAnswerComponent } from './pages/correct-answer/correct-answer.component';
 import { WrongAnswerComponent } from './pages/wrong-answer/wrong-answer.component';
+import { FinishedGameComponent } from './pages/finished-game/finished-game.component';
 
 const routes: Routes = [
   {
@@ -36,7 +37,12 @@ const routes: Routes = [
   {
     path: 'wrong-answer',
     component: WrongAnswerComponent
+  },
+  {
+    path: 'finished-game',
+    component: FinishedGameComponent
   }
+  
 
 ];
 
