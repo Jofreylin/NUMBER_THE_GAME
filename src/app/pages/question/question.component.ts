@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { QuestionPool} from '../../models/questions'
+import { QuestionPool} from '../../models/MathQuestionPool'
 
 @Component({
   selector: 'app-question',
