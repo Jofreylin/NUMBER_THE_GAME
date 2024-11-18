@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LettersPool, QuestionPool} from '../../models/questions'
+import { LettersPool, QuestionPool} from '../../models/MathQuestionPool'
 
 @Component({
   selector: 'app-select-number',

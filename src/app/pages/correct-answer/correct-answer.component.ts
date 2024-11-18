@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { QuestionPool} from '../../models/questions'
+import { QuestionPool} from '../../models/MathQuestionPool'
 
 @Component({
   selector: 'app-correct-answer',
