@@ -14,6 +14,7 @@ export class QuestionComponent implements OnDestroy {
 
 
   question: string = '';
+  hint: string = '';
 
   constructor(private router: Router) {
     this.selectRandomQuestion();
@@ -41,6 +42,7 @@ export class QuestionComponent implements OnDestroy {
     selectedQuestions.push(randomQuestion.id);
     localStorage.setItem('selectedQuestions', JSON.stringify(selectedQuestions));
   
+    this.hint = randomQuestion.hint;
     this.question = randomQuestion.question;
     // guardar ID en local storage
     localStorage.setItem('selectedQuestionId', randomQuestion.id.toString());
@@ -51,9 +53,9 @@ export class QuestionComponent implements OnDestroy {
   // Método de la cuenta regresiva
   doCount(): void {
     this.interval = setInterval(() => {
-      this.percentage -= 20;
+      this.percentage -= 30;
 
-      if (this.percentage == 0) {
+      if (this.percentage <= 0) {
         clearInterval(this.interval);
         this.router.navigate(['/select']);
       }

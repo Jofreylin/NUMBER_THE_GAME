@@ -1,10 +1,23 @@
 <div class="container">
-    <span class="happy-face">
-        <i class="fa-solid fa-face-laugh-beam"></i>
-    </span>
-    <h1 class="title">Respuesta Correcta</h1>
-    <div class="button-section">
-        <a class="home-btn btn" routerLink="/"> <i class="fa-solid fa-right-from-bracket"></i> Inicio</a>
-        <a class="again-btn btn" routerLink="/countdown" > <i class="fa-solid fa-arrows-spin"></i> Continuar</a>
+    <h1>{{rightAnswers}} / {{questions}}</h1>
+    <div class="block">
+
+        <h1 class="title">Respuesta Correcta</h1>
+
+        <span class="happy-face">
+            <i class="fa-solid fa-face-laugh-beam"></i>
+        </span>
+        
+        <h4>
+            ¡Increíble! ¡Lo lograste! Has respondido correctamente, eso demuestra tu esfuerzo y dedicación. ¡Sigue así, eres asombroso!
+        </h4>
+        
+    </div>
+
+    <div class="block" style="margin-top: 2rem;">
+        <div class="button-section">
+            <a class="home-btn btn" routerLink="/"> <i class="fa-solid fa-right-from-bracket"></i> Inicio</a>
+            <a class="again-btn btn" routerLink="/countdown" > <i class="fa-solid fa-arrow-right-long"></i> Continuar</a>
+        </div>
     </div>
 </div>

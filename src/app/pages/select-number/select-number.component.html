@@ -1,8 +1,8 @@
-<div class="selection-container">
+
+
+<div class="container">
+
     <div class="header">
-        <div class="inner-header">
-            <h1 class="question">{{question}}</h1>
-        </div>
         <div class="progress-bar">
             <div class="progress" [style.width.%]="percentage">
                 <span class="time-counter">{{count}}s</span>
@@ -10,15 +10,30 @@
         </div>
     </div>
 
-    <h2 class="selection-title">Selecciona el Número Correcto</h2>
+    <div class="main-content">
+        <div class="question-bubble">
+            <h1 class="question-title">
+                <span class="large-text">{{question}}</span>
+            </h1>
+            <div class="bubble-tail"></div>
+        </div>
 
-    <div class="number-grid">
-        <button class="number-button" *ngFor="let response of responses" (click)="clickResponse(response)"> {{response.value}} </button>
+        <div class="option-container">
+            <div class="options">
+                <div *ngFor="let answer of responses; let i = index" class="option" (click)="clickResponse(answer)">
+                    <div class="option-letter" >
+                        {{letters[i].letter}}
+                    </div>
+                    <div class="option-value-container">
+                        <span class="option-number">{{ answer.value }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
 
-  
     <div class="footer">
         <a class="close-btn" routerLink="/" > <i class="fa-solid fa-right-from-bracket"></i> SALIR</a>
     </div>
- 
 </div>

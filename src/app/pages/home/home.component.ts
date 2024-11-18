@@ -6,10 +6,37 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
+
+
+  answers = [
+    { letter: 'A', number: '10400' },
+    { letter: 'B', number: '10080' },
+    { letter: 'C', number: '12060' },
+    { letter: 'D', number: '11440' }
+  ];
+
+  decorationBars = new Array(4); // Array para las barras de decoración en la opción B
+  
+  stars = Array.from({ length: 8 }, () => ({
+    top: `${Math.random() * 100}%`,
+    left: `${Math.random() * 100}%`,
+    scale: `scale(${0.5 + Math.random() * 0.5})`
+  }));
+
+  floatingQuestions = Array.from({ length: 3 }, () => ({
+    top: `${Math.random() * 100}%`,
+    left: `${Math.random() * 100}%`,
+    scale: `scale(${0.5 + Math.random() * 0.5})`
+  }));
+
+  
   private audio: HTMLAudioElement = new Audio();
 
   ngOnInit() {
     localStorage.setItem('selectedQuestions', JSON.stringify([]));
+    localStorage.setItem('itStarted','false');
+    localStorage.setItem('rightAnswers', '0')
+    localStorage.setItem('wrongAnswers', '0')
     this.playBackgroundMusic();
   }
 
