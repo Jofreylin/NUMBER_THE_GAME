@@ -1,20 +1,30 @@
-
-
 <div class="countdown" *ngIf="itStarted; else noStarted">
   <h1 class="count-text">{{ counter }}</h1>
 </div>
 <ng-template #noStarted>
-  
-  <div class="selection-game">
-    <h1>Selecciona el modo de juego</h1>
-    <div class="block" (click)="selectMode('5-question')">
-      <h2><i class="fa-solid fa-circle-question"></i> 5 PREGUNTAS</h2>
-    </div>
-    <div class="block" (click)="selectMode('10-question')">
-      <h2><i class="fa-solid fa-circle-question"></i> 10 PREGUNTAS</h2>
-    </div>
-    <div class="block" (click)="selectMode('15-question')">
-      <h2><i class="fa-solid fa-circle-question"></i> 15 PREGUNTAS</h2>
+  <div *ngIf="selectedQuestionPoolType; else noQuestionPool">
+    <div class="selection-game">
+      <h1>Selecciona el modo de juego</h1>
+      <div class="block" (click)="selectMode('5-question')">
+        <h2><i class="fa-solid fa-circle-question"></i> 5 PREGUNTAS</h2>
+      </div>
+      <div class="block" (click)="selectMode('10-question')">
+        <h2><i class="fa-solid fa-circle-question"></i> 10 PREGUNTAS</h2>
+      </div>
+      <div class="block" (click)="selectMode('15-question')">
+        <h2><i class="fa-solid fa-circle-question"></i> 15 PREGUNTAS</h2>
+      </div>
     </div>
   </div>
+  <ng-template #noQuestionPool>
+    <div class="selection-game">
+      <h1>Selecciona la Categoría</h1>
+      <div class="block" (click)="selectQuestionPool('math')">
+        <h2><i class="fa-solid fa-arrow-down-9-1"></i> Matématicas</h2>
+      </div>
+      <div class="block" (click)="selectQuestionPool('history')">
+        <h2><i class="fa-solid fa-flag"></i> Historia Dominicana</h2>
+      </div>
+    </div>
+  </ng-template>
 </ng-template>

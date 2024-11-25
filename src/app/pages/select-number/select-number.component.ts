@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LettersPool, QuestionPool} from '../../models/MathQuestionPool'
+import { LettersPool, MathQuestionPool} from '../../models/MathQuestionPool'
+import { HistoryQuestionPool } from '../../models/HistoyQuestionPool';
 
 @Component({
   selector: 'app-select-number',
@@ -35,15 +36,37 @@ export class SelectNumberComponent implements OnInit, OnDestroy {
       return;
     }
 
+    const selectedQuestionPoolType = localStorage.getItem('questionPoolType');
+    const questionPool = selectedQuestionPoolType == "math" ? MathQuestionPool : selectedQuestionPoolType == "history" ? HistoryQuestionPool : MathQuestionPool;
+
     // Find the question in the QuestionPool
-    const question = QuestionPool.find(q => q.id === Number(id));
+    const question = questionPool.find(q => q.id === Number(id));
     this.question = question?.question;
-    this.responses = question?.answers ?? [];
+    const responses = question?.answers ?? [];
+    this.responses = this.shuffle(responses);
     this.totalSeconds = question?.time ?? 15;
 
     this.doCount()
     this.playBackgroundMusic();  // Iniciar música
   }
+
+  private shuffle<T>(array: T[]): T[] {
+    let currentIndex = array.length,  randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  };
 
   playBackgroundMusic(): void {
     this.audio.src = 'musica/Ambiente.ogg'; // Verifica que la ruta sea correcta

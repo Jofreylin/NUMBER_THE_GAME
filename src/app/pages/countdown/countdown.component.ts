@@ -11,6 +11,7 @@ export class CountdownComponent implements OnInit, OnDestroy {
   counter: number = 5;
   interval: any;
   itStarted: boolean = false;
+  selectedQuestionPoolType: boolean = false;
 
   constructor(private router: Router){
 
@@ -23,6 +24,15 @@ export class CountdownComponent implements OnInit, OnDestroy {
     if(itStarted){
       this.checkAnswers()
     }
+  }
+
+  selectQuestionPool(type: string): void{
+    if(!type){
+      return;
+    }
+    localStorage.setItem('questionPoolType',type);
+    localStorage.setItem('selectedQuestionPoolType','true');
+    this.selectedQuestionPoolType = true;
   }
 
   selectMode(type: string){

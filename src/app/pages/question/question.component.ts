@@ -1,6 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { QuestionPool} from '../../models/MathQuestionPool'
+import { MathQuestionPool } from '../../models/MathQuestionPool'
+import { HistoryQuestionPool } from '../../models/HistoyQuestionPool';
 
 @Component({
   selector: 'app-question',
@@ -22,8 +23,11 @@ export class QuestionComponent implements OnDestroy {
 
   selectRandomQuestion() {
 
+    const selectedQuestionPoolType = localStorage.getItem('questionPoolType');
+    const questionPool = selectedQuestionPoolType == "math" ? MathQuestionPool : selectedQuestionPoolType == "history" ? HistoryQuestionPool : MathQuestionPool;
+
     let selectedQuestions: number[] = JSON.parse(localStorage.getItem('selectedQuestions') || '[]');
-    const unpickedQuestions = QuestionPool.filter(q => !selectedQuestions.includes(q.id));
+    const unpickedQuestions = questionPool.filter(q => !selectedQuestions.includes(q.id));
 
     let randomQuestion;
 
@@ -31,22 +35,22 @@ export class QuestionComponent implements OnDestroy {
     if (unpickedQuestions.length > 0) {
       const randomIndex = Math.floor(Math.random() * unpickedQuestions.length);
       randomQuestion = unpickedQuestions[randomIndex];
-  } else {
+    } else {
       // If all questions have been picked, reset the selection and allow picking repeated questions
       selectedQuestions = [];
-      const randomIndex = Math.floor(Math.random() * QuestionPool.length);
-      randomQuestion = QuestionPool[randomIndex];
-  }
+      const randomIndex = Math.floor(Math.random() * questionPool.length);
+      randomQuestion = questionPool[randomIndex];
+    }
 
     // Store the selected question's ID in localStorage
     selectedQuestions.push(randomQuestion.id);
     localStorage.setItem('selectedQuestions', JSON.stringify(selectedQuestions));
-  
+
     this.hint = randomQuestion.hint;
     this.question = randomQuestion.question;
     // guardar ID en local storage
     localStorage.setItem('selectedQuestionId', randomQuestion.id.toString());
-  
+
     this.doCount();
   }
 
