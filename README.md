@@ -81,8 +81,6 @@
 
  ## Imágenes de Referencia
 
- *(A continuación se muestran ejemplos de pantallas, reemplazar `./screenshots/...` con las rutas de tus imágenes en el repositorio)*
-
  - **Pantalla de Inicio:**
    ![Pantalla de Inicio](./screenshots/inicio.png)
 
@@ -102,7 +100,7 @@
 
  ## Licencia
 
- Este proyecto se publica bajo la licencia **MIT**. Consulta el archivo LICENSE para más detalles.
+ Este proyecto se publica bajo la licencia **MIT**.
 
  ---
 
